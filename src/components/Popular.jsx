@@ -32,7 +32,6 @@ function Popular() {
 
     return (
         <GridMovie>
-
             {popular.map(movie => {
                 return (
                     <MovieCard key={movie.id} >
@@ -43,7 +42,6 @@ function Popular() {
                     </MovieCard>
                 )
             })}
-
         </GridMovie>
     )
 }
