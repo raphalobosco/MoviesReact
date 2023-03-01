@@ -27,7 +27,7 @@ function Popular() {
         getPopular();
     }, [])
 
-
+    console.log(popular)
 
     return (
         <div>
@@ -35,8 +35,9 @@ function Popular() {
             {popular.map(movie => {
                 return (
                     <div key={movie.id} >
+
+                        <img src={"https://image.tmdb.org/t/p/w500" + movie.poster_path} alt="" />
                         <h1>{movie.original_title}</h1>
-                        <img src="" alt="" />
                     </div>
                 )
             })}
