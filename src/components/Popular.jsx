@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
+import { Splide, SplideSlide } from '@splidejs/react-splide'
+import '@splidejs/splide/dist/css/splide.min.css'
 
 function Popular() {
 
@@ -31,61 +33,47 @@ function Popular() {
     console.log(popular)
 
     return (
-        <Wrapper>
-            {popular.map(movie => {
-                return (
-                    <MovieCard key={movie.id} >
+        <div>
+            <div className="wrapper">
+                <h3>Popular Movies</h3>
 
-                        <img src={"https://image.tmdb.org/t/p/w500" + movie.poster_path} alt="" />
-                        <Gradient></Gradient>
-                        <h1>{movie.original_title}</h1>
-                    </MovieCard>
-                )
-            })}
-        </Wrapper>
+                <Splide options={{
+                    perPage: 5,
+                    perMove: 3,
+                    gap: '1rem',
+                    pagination: false,
+                    drag: 'free',
+                    breakpoints: {
+                        768: {
+                            perPage: 4
+                        },
+                        425: {
+                            fixedWidth: '8rem',
+                            gap: '.5rem'
+                        }
+                    }
+                }} >
+
+                    {popular.map(movie => {
+                        return (
+                            <SplideSlide>
+                                <div className="movieCard" key={movie.id} >
+                                    <img src={"https://image.tmdb.org/t/p/w500" + movie.poster_path} alt="" />
+                                    <p>{movie.original_title}</p>
+                                    <div className="gradient"></div>
+                                </div>
+                            </SplideSlide>
+                        )
+                    })}
+                </Splide>
+            </div>
+        </div>
     )
 }
 
 // STYLES //
 
-const Wrapper = styled.div`
-   
-    margin: 4rem 0rem;
-`;
 
-const MovieCard = styled.div`
-    
-    min-height: 25rem;
-    border-radius: 2rem;
-    
-    
-    
-    h1 {
-        position: absolute;
-        bottom:0;
-        z-index: 10;
-        color: white;
-        font-size: 1.5rem;
-        text-align: center;
-        padding: 1rem;
-    }
-    
-    img {
-        width:100%;
-        height:100%;
-        position: absolute;
-        object-fit: cover
-    }
-    
-`;
 
-const Gradient = styled.div`
-width:100%;
-height: 100%;
-position: absolute;
-z-index: 3;
-bottom: 0;
-background: linear-gradient(180deg, rgba(0,0,0,0) 27%, rgba(0,0,0,0.8743872549019608) 82%);
-`;
 
 export default Popular
