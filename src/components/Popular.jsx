@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import styled from "styled-components";
 
 function Popular() {
 
@@ -30,20 +31,70 @@ function Popular() {
     console.log(popular)
 
     return (
-        <div>
+        <GridMovie>
 
             {popular.map(movie => {
                 return (
-                    <div key={movie.id} >
+                    <MovieCard key={movie.id} >
 
                         <img src={"https://image.tmdb.org/t/p/w500" + movie.poster_path} alt="" />
+                        <Gradient></Gradient>
                         <h1>{movie.original_title}</h1>
-                    </div>
+                    </MovieCard>
                 )
             })}
 
-        </div>
+        </GridMovie>
     )
 }
+
+// STYLES //
+
+const GridMovie = styled.div`
+    display: grid;
+    width: fit-content;
+    grid-template-columns: repeat(4,1fr);
+    gap: 1rem;
+    margin: auto;
+`;
+
+const MovieCard = styled.div`
+    display: flex;
+    justify-content: center;
+    max-height: 350px;
+    width: 260px;
+    border-radius: 1rem;
+    position: relative;
+    overflow: hidden;
+    
+    
+    
+    h1 {
+        position: absolute;
+        bottom:0;
+        z-index: 10;
+        color: white;
+        font-size: 1.5rem;
+        text-align: center;
+        padding: 1rem;
+    }
+    
+    img {
+        width:100%;
+        height:100%;
+        position: absolute;
+        object-fit: cover
+    }
+    
+`;
+
+const Gradient = styled.div`
+width:100%;
+height: 100%;
+position: absolute;
+z-index: 3;
+bottom: 0;
+background: linear-gradient(180deg, rgba(0,0,0,0) 27%, rgba(0,0,0,0.8743872549019608) 82%);
+`;
 
 export default Popular
