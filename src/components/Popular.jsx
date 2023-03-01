@@ -32,7 +32,6 @@ function Popular() {
 
     return (
         <GridMovie>
-
             {popular.map(movie => {
                 return (
                     <MovieCard key={movie.id} >
@@ -43,7 +42,6 @@ function Popular() {
                     </MovieCard>
                 )
             })}
-
         </GridMovie>
     )
 }
@@ -61,7 +59,7 @@ const GridMovie = styled.div`
 const MovieCard = styled.div`
     display: flex;
     justify-content: center;
-    max-height: 350px;
+    height: 350px;
     width: 260px;
     border-radius: 1rem;
     position: relative;
