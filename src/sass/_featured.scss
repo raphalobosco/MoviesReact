@@ -86,9 +86,10 @@
     }
 
     .playTrailer {
+        cursor: pointer;
         display: flex;
         align-items: center;
-        gap: 1rem;
+        gap: .5rem;
 
         span {
             font-weight: 600;
@@ -96,12 +97,14 @@
     }
 
 
-    .trailer-btn {
+    .trailer-btn,
+    svg {
         border-radius: 9999px;
+        color: #04bce1;
         // padding: 2rem;
-        height: 58px;
-        width: 58px;
-        background-color: #04bce1;
+        height: 64px;
+        width: 64px;
+        // background-color: #04bce1;
         display: flex;
         justify-content: center;
         align-items: center;
