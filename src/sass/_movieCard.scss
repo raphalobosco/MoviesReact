@@ -1,26 +1,45 @@
 .wrapper {
 
-    margin: 4rem 0rem;
+    margin-block: 3rem;
+
+    h3 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 1.25rem;
+    }
 
 }
 
 .movieCard {
     overflow: hidden;
     display: flex;
-    max-width: 13rem;
-    align-items: center;
-    justify-content: center;
+    max-width: auto;
+    min-height: 250px;
+    justify-content: flex-end;
     position: relative;
-    border-radius: .5rem;
+    border-radius: 0.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+    color: white;
+    padding: 1rem;
 
     p {
-        position: absolute;
-        bottom: 0;
+        font-size: .875rem;
+        font-weight: 500;
+        color: inherit;
+    }
+
+    span {
+        font-size: .75rem;
+        font-weight: 300;
+        color: #b2b2b2;
+
+    }
+
+    p,
+    span {
+
         z-index: 10;
-        color: white;
-        font-size: 1rem;
-        text-align: center;
-        padding: 1rem;
     }
 
     img {
@@ -29,8 +48,15 @@
 
     }
 
+    svg {
+        color: yellow;
+        display: inline;
+        font-size: 10px;
+
+    }
+
     @include mq-mobile {
-        border-radius: .5rem;
+        border-radius: .65rem;
 
         p {
             box-sizing: border-box;
@@ -55,4 +81,10 @@
         z-index: 1;
         background: linear-gradient(180deg, rgba(0, 0, 0, 0) 27%, rgba(0, 0, 0, 1) 82%);
     }
+}
+
+.topRatedCard {
+    min-width: 100%;
+    max-height: 300px;
+    align-items: flex-start;
 }
