@@ -12,7 +12,7 @@ function Discover() {
   let params = useParams()
 
   const getMovies = async (genre) => {
-    const api = await fetch(`https://api.themoviedb.org/3/discover/movie/?api_key=${import.meta.env.VITE_REACT_APP_MOVIE_API}&language=en-US&page=1&region=US&with_original_language=en&with_genres=${genre}`)
+    const api = await fetch(`https://api.themoviedb.org/3/discover/movie/?api_key=${import.meta.env.VITE_REACT_APP_MOVIE_API}&language=en-US&page=1&region=US&with_original_language=en&with_genres=${genre}/`)
 
     const movies = await api.json()
 
