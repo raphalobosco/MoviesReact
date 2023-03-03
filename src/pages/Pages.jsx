@@ -1,10 +1,14 @@
 import Home from "./Home"
+import { Route, Routes } from "react-router-dom"
+import Discover from "./Discover"
 
 function Pages() {
     return (
-        <div>
-            <Home />
-        </div>
+
+        <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/discover/:type" element={<Discover />} />
+        </Routes>
     )
 }
 

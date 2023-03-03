@@ -1,4 +1,6 @@
+import Categories from "./components/Categories"
 import Pages from "./pages/Pages"
+import { BrowserRouter } from 'react-router-dom'
 
 
 function App() {
@@ -6,7 +8,10 @@ function App() {
 
   return (
     <div className="container">
-      <Pages />
+      <BrowserRouter>
+        <Categories />
+        <Pages />
+      </BrowserRouter>
 
     </div>
   )
