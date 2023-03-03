@@ -2,104 +2,107 @@
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /* Remove default margin */
 * {
-    margin: 0;
-    //padding: 0;
-    font: inherit;
+  margin: 0;
+  //padding: 0;
+  font: inherit;
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
 ul,
 ol,
 li {
-    list-style: none;
+  list-style: none;
 }
 
 /* Set core root defaults */
 html:focus-within {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 *:focus {
-    outline: none;
+  outline: none;
 }
 
 html,
 body {
-    height: 100%;
+  height: 100%;
 }
 
 /* Set core body defaults */
 body {
-    text-rendering: optimizeSpeed;
-    line-height: 1.5;
-
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
 }
-
-
 
 input,
 label {
-    display: block;
+  display: block;
 }
 
 /* A elements that don't have a class get default styles */
 a:not([class]) {
-    text-decoration-skip-ink: auto;
+  text-decoration-skip-ink: auto;
 }
 
 a {
-    font-size: inherit;
-    color: inherit;
-    text-decoration: none;
+  font-size: inherit;
+  color: inherit;
+  text-decoration: none;
 
-    &:hover {
-        text-decoration: underline;
-    }
+  &:hover {
+    text-decoration: underline;
+  }
 }
-
 
 /* Make images easier to work with */
 img,
 picture,
 svg {
-    max-width: 100%;
-    display: block;
+  max-width: 100%;
+  display: block;
 }
 
 button {
-    cursor: pointer;
-    border-style: none;
+  cursor: pointer;
+  border-style: none;
 }
 
 body {
-
-    margin: 0;
-    font-family: 'Inter', sans-serif;
+  margin: 0;
+  font-family: "Inter", sans-serif;
 }
 
 .container {
-    max-width: 1024px;
-    margin: auto;
+  max-width: 1024px;
+  margin: auto;
 
-    @include mq-laptop {
-        max-width: 900px;
-    }
+  @include mq-laptop {
+    max-width: 900px;
+  }
 
-    @include mq-tablet-landscape {
-        max-width: 768px;
-    }
+  @include mq-tablet-landscape {
+    max-width: 768px;
+  }
 
-    @include mq-tablet-portrait {
-        max-width: 640px;
-    }
+  @include mq-tablet-portrait {
+    max-width: 640px;
+  }
 
-    @include mq-mobile {
-        max-width: 425px;
-        padding: 1rem;
-    }
+  @include mq-mobile {
+    max-width: 425px;
+    padding: 1rem;
+  }
+}
+
+.wrapper {
+  margin-top: 3rem;
+}
+
+#root {
+  padding-block: 2rem;
 }

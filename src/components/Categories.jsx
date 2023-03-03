@@ -46,24 +46,13 @@ function Categories() {
   );
 }
 
-{
-  /* <NavLink to={'/genres/&with_genres=35'}>Comedy</NavLink>
-                <NavLink to={'&with_genres=18'}>Drama</NavLink>
-                <NavLink to={'&with_genres=12'}>Adventure</NavLink>
-                <NavLink to={'&with_genres=53'}>Thriller</NavLink> 
-                <NavLink to={genreId.name === "Action" && `/discover/${genreId.id}`}>Comedy</NavLink>
-                <NavLink to={'/discover/drama'}>Drama</NavLink>
-                <NavLink to={'/discover/adventure'}>Adventure</NavLink>
-                <NavLink to={'/discover/thriller'}>Thrilles</NavLink>
-                */
-}
-
 const List = styled.ul`
   display: flex;
+  flex-wrap: wrap;
   gap: 3rem;
   width: 100%;
   justify-content: center;
-  margin-block: 2rem;
+  margin-bottom: 2rem;
 `;
 
 export default Categories;
