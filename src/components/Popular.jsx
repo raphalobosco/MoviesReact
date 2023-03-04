@@ -9,8 +9,7 @@ function Popular() {
 
   const getMovies = async () => {
     const api = await fetch(
-      `https://api.themoviedb.org/3/movie/popular?api_key=${
-        import.meta.env.VITE_REACT_APP_MOVIE_API
+      `https://api.themoviedb.org/3/movie/popular?api_key=${import.meta.env.VITE_REACT_APP_MOVIE_API
       }&language=en-US&page=1&region=US`
     );
     const data = await api.json();
@@ -27,6 +26,7 @@ function Popular() {
       {popular.length > 0 && (
         <Featured data={popular[Math.floor(Math.random() * 20)]} />
       )}
+
 
       <div className="wrapper">
         <h3>Popular Movies</h3>
