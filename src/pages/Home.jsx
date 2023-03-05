@@ -1,4 +1,3 @@
-import MovieDetails from "../components/MovieDetails"
 import Popular from "../components/Popular"
 import TopRated from "../components/TopRated"
 
