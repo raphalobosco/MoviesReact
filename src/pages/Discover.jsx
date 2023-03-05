@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { FaStar } from "react-icons/fa";
 import styled from "styled-components";
-import MovieDetails from "../components/movieDetails";
+import Details from "../components/Details";
 import Modal from "react-responsive-modal";
 import 'react-responsive-modal/styles.css';
 
@@ -48,7 +48,7 @@ function Discover() {
       {genres.length > 0 && (
         <Modal open={open} onClose={onCloseModal} center>
 
-          <MovieDetails data={genres[id]} />
+          <Details data={genres[id]} />
         </Modal>
       )}
 

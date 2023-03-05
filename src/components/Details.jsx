@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { FaStar } from "react-icons/fa";
 
-function MovieDetails(props) {
+function Details(props) {
 
     const { data } = props;
 
@@ -58,6 +58,7 @@ function MovieDetails(props) {
                             return (
                                 <div key={actor.id}>
                                     {actor.name}
+                                    {actor.character}
                                 </div>
                             )
                         })}
@@ -73,4 +74,4 @@ function MovieDetails(props) {
     )
 }
 
-export default MovieDetails
+export default Details
